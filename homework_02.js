@@ -98,7 +98,7 @@ function multyNumbers(a, b) {
  * @param {number} b Второе число
  */
 function divNumbers(a, b) {
-    return (a / b).toFixed(2)
+    return a / b
 }
 
 
@@ -121,7 +121,7 @@ alert(sumNumbers(subNumbers(19, 5), divNumbers(13, -94)))
  * @param {number} arg2 Второе число
  * @param {String} operation Требуемая операция
  */
-function mathOperation(arg1, arg2, operation = null) {
+function mathOperation(arg1, arg2, operation) {
     operation = prompt('Введите необходимую операцию из списка: "+", "-", "*", "/" => ')
     switch (operation) {
         case "+":
@@ -175,6 +175,8 @@ if ((stringMoney.charAt(stringMoney.length - 2)) != 1) {
         case '4':
             alert(`Ваша сумма в ${stringMoney} рубля успешно зачислена`);
             break;
+        default:
+            alert("Введена некорректная сумма")
     }
 }
 else {
