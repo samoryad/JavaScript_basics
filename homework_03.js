@@ -118,11 +118,11 @@ const productsShop = [
     },
 ];
 
-// 1
-// /**
-//  * Функция определения наличия фото.
-//  * @param {array} Массив данных для фильтрации.
-//  */
+1
+/**
+ * Функция определения наличия фото.
+ * @param {array} Массив данных для фильтрации.
+ */
 function photoAvailable(array) {
     if (array.photos && array.photos != '') {
         return true;
@@ -136,11 +136,14 @@ let newProductsShop = productsShop.filter((photoAvailable));
 console.log(newProductsShop);
 
 // 2
+// на сколько я понял, этот способ работает независимо от типа:
 productsShop.sort((prev, next) => {
     if (prev.price < next.price) return -1;
-    if (prev.price < next.price) return 1;
+    if (prev.price > next.price) return 1;
 });
-productsShop.sort((prev, next) => prev.price - next.price);
+
+// а этот для чисел:
+// productsShop.sort((prev, next) => prev.price - next.price);
 
 console.log(productsShop);
 
