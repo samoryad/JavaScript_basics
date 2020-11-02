@@ -1,3 +1,4 @@
+'use strict'
 /*Задание №1.
 (это задание делайте по желанию)
 Написать функцию, преобразующую число в объект.
@@ -33,6 +34,20 @@
 не должен быть внутри функции - конструктора, и также не нужно создавать отдельный
 объект - прототип(как объект transport в уроке).*/
 
+// es5
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+};
+
+Product.prototype.make25PercentDiscount = function () {
+    this.price -= this.price * 0.25
+}
+
+const product01 = new Product("Gogi", "1000");
+console.log(product01);
+product01.make25PercentDiscount();
+console.log(product01);
 
 
 
