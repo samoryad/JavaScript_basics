@@ -35,20 +35,37 @@
 объект - прототип(как объект transport в уроке).*/
 
 // es5
-function Product(name, price) {
+function Product_es5(name, price) {
     this.name = name;
     this.price = price;
 };
 
-Product.prototype.make25PercentDiscount = function () {
+Product_es5.prototype.make25PercentDiscount_es5 = function () {
     this.price -= this.price * 0.25
 }
 
-const product01 = new Product("Gogi", "1000");
+const product01 = new Product_es5("Gogi", "1000");
 console.log(product01);
-product01.make25PercentDiscount();
+product01.make25PercentDiscount_es5();
 console.log(product01);
 
+
+// es6
+class Product_es6 {
+    constructor(new_name, new_price) {
+        this.new_name = new_name;
+        this.new_price = new_price;
+    }
+
+    make25PercentDiscount_es6() {
+        this.new_price -= this.new_price * 0.25
+    }
+}
+
+const product02 = new Product_es6("Ashot", "10000");
+console.log(product02);
+product02.make25PercentDiscount_es6();
+console.log(product02);
 
 
 /*Задание 1.2
