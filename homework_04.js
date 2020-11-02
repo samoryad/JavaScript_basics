@@ -80,8 +80,40 @@ console.log(product02);
 Объекты типа AttachedPost должны иметь метод makeTextHighlighted,
 который будет назначать свойству highlighted значение true.*/
 
+// a) es5
+function Post_es5(author, text, date) {
+    this.author = author;
+    this.text = text;
+    this.date = date;
+};
+
+Post_es5.prototype.edit_es5 = function (text) {
+    this.text = text
+}
+
+const post_01 = new Post_es5("Пушкин", "Метель", "1830");
+console.log(post_01);
+post_01.edit_es5("Выстрел");
+console.log(post_01);
 
 
+// a) es6
+class Post_es6 {
+    constructor(new_author, new_text, new_date) {
+        this.new_author = new_author;
+        this.new_text = new_text;
+        this.new_date = new_date;
+    }
+
+    edit_es6(text) {
+        this.new_text = text
+    }
+}
+
+const post_02 = new Post_es6("Толстой", "Филипок", "1875");
+console.log(post_02);
+post_02.edit_es6("Казаки");
+console.log(post_02);
 
 /*Задание 2
 (это задание не является частью учебной программы, делайте его по желанию).
