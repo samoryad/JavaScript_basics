@@ -49,12 +49,12 @@ const post = {
             }
         },
     ]
-}
+};
 
-console.log(post.author)
-console.log(post.comments[0].rating["dislikes"])
-console.log(post.comments[1].userId)
-console.log(post.comments[1].text)
+console.log(post.author);
+console.log(post.comments[0].rating["dislikes"]);
+console.log(post.comments[1].userId);
+console.log(post.comments[1].text);
 
 
 
@@ -78,8 +78,8 @@ const productsArray = [
 ];
 
 productsArray.forEach(function (product) {
-    product.price -= (product.price * 0, 15);
-})
+    product.price -= (product.price * 0.15);
+});
 
 console.log(productsArray);
 
@@ -118,28 +118,28 @@ const productsShop = [
     },
 ];
 
-1
+// 1
 /**
  * Функция определения наличия фото.
- * @param {array} Массив данных для фильтрации.
+ * @param {product} Объект для фильтрации.
  */
-function photoAvailable(array) {
-    if (array.photos && array.photos != '') {
-        return true;
-    }
-    else {
-        return false;
-    }
+function photoAvailable(product) {
+    return "photos" in product && product.photos.length > 0
 }
 
-let newProductsShop = productsShop.filter((photoAvailable));
+let newProductsShop = productsShop.filter(photoAvailable);
 console.log(newProductsShop);
 
 // 2
 // на сколько я понял, этот способ работает независимо от типа:
 productsShop.sort((prev, next) => {
-    if (prev.price < next.price) return -1;
-    if (prev.price > next.price) return 1;
+    if (prev.price < next.price) {
+        return -1;
+    }
+    if (prev.price > next.price) {
+        return 1;
+    }
+    return 0;
 });
 
 // а этот для чисел:
