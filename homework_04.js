@@ -115,6 +115,43 @@ console.log(post_02);
 post_02.edit_es6("Казаки");
 console.log(post_02);
 
+
+// б) es5
+function AttachedPost_es5(author, text, date, highlighted = false) {
+    Post_es5.call(this, author, text, date);
+    this.highlighted = highlighted;
+};
+
+AttachedPost_es5.prototype = Object.create(Post_es5);
+AttachedPost_es5.prototype.constructor = AttachedPost_es5;
+AttachedPost_es5.prototype.makeTextHighlighted_es5 = function () {
+    this.highlighted = true
+}
+
+const attached_post_01 = new AttachedPost_es5("Лермонтов", "Мцыри", "1839");
+console.log(attached_post_01);
+attached_post_01.makeTextHighlighted_es5();
+console.log(attached_post_01);
+
+
+// б) es6
+class AttachedPost_es6 extends Post_es6 {
+    constructor(new_author, new_text, new_date, new_highlighted = false) {
+        super(new_author, new_text, new_date);
+        this.new_highlighted = new_highlighted;
+    }
+
+    makeTextHighlighted_es6() {
+        this.new_highlighted = true;
+    }
+}
+
+const attached_post_02 = new AttachedPost_es6("Некрасов", "Коробейники", "1861");
+console.log(attached_post_02);
+attached_post_02.makeTextHighlighted_es6();
+console.log(attached_post_02);
+
+
 /*Задание 2
 (это задание не является частью учебной программы, делайте его по желанию).
 Для игры бродилка(которая есть в дополнительных видео), добавить возможность ходить по диагонали цифрами 1, 3, 7, 9.
