@@ -9,9 +9,9 @@
 - сотни (в свойстве hundreds)
 Например, для числа 45 мы должны получить следующий объект:
 {
-    units: 5, //это единицы
-        tens: 4, //это десятки
-            hundreds: 0, //это сотни
+units: 5, //это единицы
+tens: 4, //это десятки
+hundreds: 0, //это сотни
 }
 Если число было передано вне[0, 999] диапазона, не целое число или вообще не число,
     необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
@@ -23,6 +23,22 @@
  Используйте также остаток от деления на 10, например 123 % 10 будет 3
  Вам также может пригодится делить число на 100 и на 10.*/
 
+
+function numberToObj(number) {
+    number = parseInt(prompt("Введите число от 0 до 999: "));
+    if (Number.isInteger(number) && (number >= 0) && (number <= 999)) {
+        let objNum = {};
+        objNum["units"] = number % 10;
+        objNum["tens"] = (Math.floor(number / 10) % 10);
+        objNum["hundreds"] = Math.floor(number / 100);
+        return objNum;
+    }
+    else {
+        alert("Число введено неверно!")
+    }
+}
+
+console.log(numberToObj());
 
 
 
