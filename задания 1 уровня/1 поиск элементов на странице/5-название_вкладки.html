@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 1</title>
+</head>
+
+<body>
+    <!-- Задание. Выведите содержимое тега title в консоль. -->
+
+    <script>
+        'use strict'
+        let findTitle01 = document.querySelector('title');
+        console.log(findTitle01.innerText);
+        // или так
+        let findTitle02 = document.getElementsByTagName('title');
+        console.log(findTitle02[0].innerText.trim());
+    </script>
+</body>
+
+</html>
