@@ -34,13 +34,14 @@
     -->
 
     <script>
+        'use strict';
         let firstStar = document.getElementById('first');
         let secondStar = document.getElementById('second');
         let thirdStar = document.getElementById('third');
         let fourthStar = document.getElementById('fourth');
         let fifthStar = document.getElementById('fifth');
 
-        // let iEL = document.querySelectorAll('i');
+        // let iELs = document.querySelectorAll('i');
 
         let goldenClass = 'golden';
 
@@ -111,15 +112,15 @@
         });
 
 
-        // Думаю, можно реализовать через цикл, надо доделать.
-        // for (let i = 0; i < iEL.length; i++) {
-        //     iEL[i].addEventListener('mouseover', function () {
-        //         if (!iEL[i].classList.contains(goldenClass)) {
-        //             iEL[i].classList.add(goldenClass);
+        // Думаю, можно реализовать через цикл (или hover), но не додумал.
+        // for (let i = 0; i < iELs.length; i++) {
+        //     iELs[i].addEventListener('mouseover', function () {
+        //         if (!iELs[i].classList.contains(goldenClass)) {
+        //             iELs[i].classList.add(goldenClass);
         //         };
         //     });
-        //     iEL[i].addEventListener('mouseout', function () {
-        //         iEL[i].classList.remove(goldenClass);
+        //     iELs[i].addEventListener('mouseout', function () {
+        //         iELs[i].classList.remove(goldenClass);
         //     });
         // }
 
