@@ -26,7 +26,15 @@
     -->
 
     <script>
-        
+        // не совсем понял, зачем здесь clientHeight
+        'use strict';
+        let btnEl = document.querySelector('button');
+        let messEl = document.querySelector('.message');
+        let audioElement = new Audio('notification.mp3');
+        btnEl.addEventListener('click', function () {
+            audioElement.play();
+            messEl.style.transform = `translateY(-220px)`;
+        });
     </script>
 </body>
 
