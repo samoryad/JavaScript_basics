@@ -15,7 +15,7 @@ let textEl = document.querySelector('.text');
 let linkEls = document.querySelectorAll('.nav-link');
 linkEls.forEach(function (link) {
     link.addEventListener('click', clickHandler);
-})
+});
 
 /**
  * Обработчик клика по .nav-link
