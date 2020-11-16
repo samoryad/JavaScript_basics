@@ -161,7 +161,7 @@ let app = {
         // 7.1 перебираем эти теги в цикле
         for (let i = 0; i < trs.length; i++) {
             // 7.2 создаем тег td
-            let td = document.createElement('td');;
+            let td = document.createElement('td');
             // 7.3 в текущий тег td в innerText вставляем номер строки из this.config.rows
             td.innerText = this.config.rows[i];
             // 7.4 получившийся тег td вставляем в текущую строку (тег tr)
@@ -189,6 +189,6 @@ let app = {
         // 8.5 и в него перед </tbody> вставляем значение из переменной tr
         tbody.insertAdjacentElement('beforeend', tr);
     },
-}
+};
 
 app.run();
